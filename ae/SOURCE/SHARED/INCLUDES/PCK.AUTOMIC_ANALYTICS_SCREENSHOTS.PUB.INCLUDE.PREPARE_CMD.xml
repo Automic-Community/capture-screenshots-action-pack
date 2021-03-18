@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBI name="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.INCLUDE.PREPARE_CMD">
+<HEADER state="1">
+<Title>Prepare Command</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType/>
+</HEADER>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[: SET &UC4RB_JAVA_CMD# = 'java -jar "&$AGENT_RESOURCES_CLIENT#analytics-tool.jar"'
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -action &ACTION_NAME#")
+
+! !AWI base URL
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -url &UC4RB_SNAP_AWI_URL#")
+
+! AWI Version
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -v &UC4RB_SNAP_AWI_VER#")
+
+! Connection
+: IF  &UC4RB_SNAP_CONN# NE ""
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -n &UC4RB_SNAP_CONN#")
+: ENDIF
+
+! Client
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -c &UC4RB_SNAP_CLIENT#")
+
+! Username
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -u &UC4RB_SNAP_USR#")
+
+! Department
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -d &UC4RB_SNAP_DEP#")
+
+! Page Load Timeout
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -t &UC4RB_SNAP_PAGE_TIMEOUT#")
+
+! Ignore SSL issues
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -ssl &UC4RB_SNAP_SSL#")]]></MSCRI>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBI>
+</uc-export>
