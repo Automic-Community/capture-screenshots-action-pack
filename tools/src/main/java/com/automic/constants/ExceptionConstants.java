@@ -7,7 +7,8 @@ package com.automic.constants;
 public class ExceptionConstants {
 
 	
-    public static final String INVALID_FILE_TYPE = "Invalid file type provided [%s], required PNG file type";
+    public static final String INVALID_FILE_TYPE = "Invalid file type provided [%s], required PNG file type.";
+    public static final String INVALID_CLIENT_TYPE = "Invalid Client value provided [%s], required integer type.";
     public static final String INVALID_JSON = "File doesn't have correct Json";
 		
     public static final String UNABLE_TO_FLUSH_STREAM = "Error while flushing stream";

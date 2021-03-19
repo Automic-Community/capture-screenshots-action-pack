@@ -3,6 +3,7 @@ package com.automic.actions;
 import com.automic.awi.AWIVersion12;
 import com.automic.awi.AbstractAWI;
 import com.automic.constants.Constants;
+import com.automic.constants.ExceptionConstants;
 import com.automic.exception.AutomicException;
 import com.automic.modal.AWI;
 import com.automic.util.CommonUtil;
@@ -40,13 +41,17 @@ public abstract class AbstractInitAction extends AbstractAction {
 		}
 	}
 
-	private void initializeInput(AWI awi) throws AutomicException {
+	private void initializeInput(AWI awi) throws AutomicException  {
 		awi.setAeVersion(CommonUtil.trim(getOptionValue(Constants.AWI_VERSION)));
 		awi.setIgnoreSSL(CommonUtil.convert2Bool(getOptionValue(Constants.IGNORE_SSL)));
 		awi.setAwiUrl(CommonUtil.trim(getOptionValue(Constants.AWI_URL)));
 		awi.setAeConnection(CommonUtil.trim(getOptionValue(Constants.AWI_CONNECTION)));
 		String client = CommonUtil.trim(getOptionValue(Constants.AWI_CLIENT));
-		awi.setClient(Integer.parseInt(client));
+		try {
+			awi.setClient(Integer.parseInt(client));
+		} catch (NumberFormatException e) {
+			throw new AutomicException(String.format(ExceptionConstants.INVALID_CLIENT_TYPE, client));
+		}
 		awi.setUser(CommonUtil.trim(getOptionValue(Constants.AWI_USERNAME)));
 		awi.setDepartment(CommonUtil.trim(getOptionValue(Constants.AWI_DEPARTMENT)));
 		awi.setPassword(getOptionValue(Constants.AWI_PASSWORD));
