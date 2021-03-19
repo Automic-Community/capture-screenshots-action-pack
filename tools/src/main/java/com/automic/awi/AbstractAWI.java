@@ -31,12 +31,12 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 public abstract class AbstractAWI {
 
 	protected final AWI inputs;
-	protected  WebDriver driver;
+	protected WebDriver driver;
 
 	public AbstractAWI(AWI inputs) {
 		this.inputs = inputs;
 		initWebDriver(inputs.isIgnoreSSL());
-	
+
 	}
 
 	public void loadDashboard(String dashboard) {
@@ -81,114 +81,64 @@ public abstract class AbstractAWI {
 		wait.until(pageLoadCondition);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(lastElementToLoad)));
 	}
-	
+
 	/**
 	 * Check is Element is visible
+	 * 
 	 * @param driver
 	 * @param lastElementToLoad
 	 */
 	public void waitForElemetLoad(WebDriver driver, String lastElementToLoad, int waitTime) {
 		ExpectedCondition<Boolean> pageLoadCondition = waitDocumentReadyObj();
-        WebDriverWait wait = new WebDriverWait(driver, waitTime);
-        wait.until(pageLoadCondition);
-        wait.until(ExpectedConditions.elementToBeClickable(By.className(lastElementToLoad)));
-    }
-	
-	private static ExpectedCondition<Boolean> waitDocumentReadyObj() {
-		 ExpectedCondition<Boolean> pageLoadCondition = new
-	                ExpectedCondition<Boolean>() {
-	                    public Boolean apply(WebDriver driver) {
-	                        return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
-	                    }
-	                };	                
-	   return pageLoadCondition;
+		WebDriverWait wait = new WebDriverWait(driver, waitTime);
+		wait.until(pageLoadCondition);
+		wait.until(ExpectedConditions.elementToBeClickable(By.className(lastElementToLoad)));
 	}
-	
-	
+
+	private static ExpectedCondition<Boolean> waitDocumentReadyObj() {
+		ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
+			public Boolean apply(WebDriver driver) {
+				return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+			}
+		};
+		return pageLoadCondition;
+	}
+
 	public void takeSnapshot(WebDriver driver, WebElement elem, String fileWithPath) throws AutomicException {
-		Screenshot s=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot( driver, elem);
-	    try {
-			ImageIO.write(s.getImage(),"PNG",new File(fileWithPath));
+		Screenshot s = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver,
+				elem);
+		try {
+			ImageIO.write(s.getImage(), "PNG", new File(fileWithPath));
 		} catch (IOException e) {
-			
+
 			throw new AutomicException(e.getMessage());
 		}
-		
-	}	
-	
+
+	}
+
 	private void initWebDriver(boolean ignoreSSL) {
 		WebDriverManager.chromedriver().setup();
 
-		//Create instance of ChromeOptions Class
-		 ChromeOptions options = new ChromeOptions();		 
-		 //Using the accept insecure cert method with true as parameter to accept the untrusted certificate
-		 options.setAcceptInsecureCerts(ignoreSSL);
-		 
-		 
-//			options.addArguments("start-maximized");
-//			options.addArguments("enable-automation");
-//			options.addArguments("--no-sandbox");
-//			 options.addArguments("--disable-infobars");
-//			 options.addArguments("--disable-dev-shm-usage");
-//			options.addArguments("--disable-browser-side-navigation");
-//			options.addArguments("--disable-gpu");
-//		 
-		 
-		 
-		 //setting headless mod
-		 options.addArguments("--headless");
-		
-	
-		 // Create an object of desired capabilities class with Chrome driver
-			DesiredCapabilities SSLCertificate = DesiredCapabilities.chrome();
-			// Set the pre defined capability – ACCEPT_SSL_CERTS value to true
-			SSLCertificate.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-			// Open a new instance of chrome driver with the desired capability		
-		 SSLCertificate.setCapability(ChromeOptions.CAPABILITY, options);
-			options.merge(SSLCertificate);
-		 
+		// Create instance of ChromeOptions Class
+		ChromeOptions options = new ChromeOptions();
+		// Using the accept insecure cert method with true as parameter to accept the
+		// untrusted certificate
+		options.setAcceptInsecureCerts(ignoreSSL);
 
+		options.addArguments("--headless");
 
-		 
+		// Create an object of desired capabilities class with Chrome driver
+		DesiredCapabilities SSLCertificate = DesiredCapabilities.chrome();
+		// Set the pre defined capability – ACCEPT_SSL_CERTS value to true
+		SSLCertificate.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		// Open a new instance of chrome driver with the desired capability
+		SSLCertificate.setCapability(ChromeOptions.CAPABILITY, options);
+		options.merge(SSLCertificate);
+
 		driver = new ChromeDriver(options);
 		driver.manage().window().setSize(new org.openqa.selenium.Dimension(2560, 1600));
 	}
 
-//private ChromeOptions setChromeProperties(boolean ignoreSSL) {
-//		
-//		//Create instance of ChromeOptions Class
-//		 ChromeOptions options = new ChromeOptions();		 
-//		 //Using the accept insecure cert method with true as parameter to accept the untrusted certificate
-//		 options.setAcceptInsecureCerts(ignoreSSL);
-//		 
-//		 
-//			options.addArguments("start-maximized");
-//			options.addArguments("enable-automation");
-//			options.addArguments("--no-sandbox");
-//			 options.addArguments("--disable-infobars");
-//			 options.addArguments("--disable-dev-shm-usage");
-//			options.addArguments("--disable-browser-side-navigation");
-//			options.addArguments("--disable-gpu");
-//		 
-//		 
-//		 
-//		 //setting headless mod
-//		// options.addArguments("--headless");
-//		 
-//		 // Create an object of desired capabilities class with Chrome driver
-//			DesiredCapabilities SSLCertificate = DesiredCapabilities.chrome();
-//			// Set the pre defined capability – ACCEPT_SSL_CERTS value to true
-//			SSLCertificate.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-//			// Open a new instance of chrome driver with the desired capability		
-//		 SSLCertificate.setCapability(ChromeOptions.CAPABILITY, options);
-//			options.merge(SSLCertificate);
-//		 
-//		 return options;
-//		
-//	}
-//
-//	
-	
 	public abstract void loginAWI() throws AutomicException;
 
 	protected abstract String formAWI12DashboardUrl(String dashboard);

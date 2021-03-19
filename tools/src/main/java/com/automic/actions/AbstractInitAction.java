@@ -20,7 +20,7 @@ public abstract class AbstractInitAction extends AbstractAction {
 		addOption(Constants.AWI_CONNECTION, true, "Connection");
 		addOption(Constants.AWI_CLIENT, true, "AWI Client");
 		addOption(Constants.AWI_USERNAME, true, "AWI Username");
-		addOption(Constants.AWI_DEPARTMENT, true, "AWI Department");
+		addOption(Constants.AWI_DEPARTMENT, false, "AWI Department");
 		addOption(Constants.AWI_PASSWORD, true, "AWI Password");
 		addOption(Constants.TIMEOUT, true, "Page load time out");
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import com.automic.constants.Constants;
 import com.automic.exception.AutomicException;
 import com.automic.modal.AWI;
+import com.automic.util.CommonUtil;
 import com.automic.util.ConsoleWriter;
 
 public class AWIVersion12 extends AbstractAWI{
@@ -14,9 +15,7 @@ public class AWIVersion12 extends AbstractAWI{
 
 	public AWIVersion12(AWI inputs) {
 		super(inputs);
-	}
-
-	
+	}	
 
 	public void loginAWI() throws AutomicException {
 		
@@ -41,11 +40,12 @@ public class AWIVersion12 extends AbstractAWI{
 			Thread.sleep(500);
 
 			// Department
-			WebElement department = driver.findElement(By.xpath(Constants.DEPARTMENT));
-			department.sendKeys(inputs.getDepartment());
-			department.click();
-			Thread.sleep(500);
-
+			if(CommonUtil.checkNotEmpty(inputs.getDepartment())) {
+				WebElement department = driver.findElement(By.xpath(Constants.DEPARTMENT));
+				department.sendKeys(inputs.getDepartment());
+				department.click();
+				Thread.sleep(500);
+			}
 			// password
 			WebElement password = driver.findElement(By.xpath(Constants.PASSWORD));
 			password.sendKeys(inputs.getPassword());

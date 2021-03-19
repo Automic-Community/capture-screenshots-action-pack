@@ -1,7 +1,10 @@
 package com.automic.actions;
 
+import java.io.File;
+
 import com.automic.awi.AbstractAWI;
 import com.automic.constants.Constants;
+import com.automic.constants.ExceptionConstants;
 import com.automic.exception.AutomicException;
 import com.automic.util.CommonUtil;
 import com.automic.util.ConsoleWriter;
@@ -18,6 +21,7 @@ public class DashboardSnapShot extends AbstractInitAction {
 	@Override
 	public void executeSpecific(AbstractAWI v12) throws AutomicException {
 		initializeInput();
+		validation();
 		v12.loadDashboard(dashboardName);
 		v12.loginAWI();		
 		v12.takeDashboardSnapshot(filePath);
@@ -31,4 +35,10 @@ public class DashboardSnapShot extends AbstractInitAction {
 	}
 
 
+	private void validation() throws AutomicException{
+		File f = new File(filePath);
+		if(!CommonUtil.checkPNG(f)) {
+			throw new AutomicException(String.format(ExceptionConstants.INVALID_FILE_TYPE, f.getName()));
+		}
+	}
 }

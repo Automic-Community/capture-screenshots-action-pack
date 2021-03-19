@@ -192,5 +192,14 @@ public class CommonUtil {
 		return parameterName;
 	}
 
+	/**
+	 * Check file, is of PNG Type
+	 * @param file
+	 * @return true if file is of PNG type
+	 */
+	public static boolean checkPNG(File file) {
+		   String fileName = file.getName().toUpperCase();
+		   return fileName.endsWith(".PNG") || fileName.endsWith(".png");
+		}
 
 }
