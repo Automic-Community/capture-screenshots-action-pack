@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +20,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.automic.constants.Constants;
+import com.automic.constants.ExceptionConstants;
 import com.automic.exception.AutomicException;
 import com.automic.modal.AWI;
 import com.automic.util.ConsoleWriter;
@@ -39,7 +41,7 @@ public abstract class AbstractAWI {
 
 	}
 
-	public void loadDashboard(String dashboard) {
+	public void loadDashboard(String dashboard) throws AutomicException {
 		String dashboardURL = formAWI12DashboardUrl(dashboard);
 		String dashboardURLMSG = "Dashboard URL[%s]";
 		ConsoleWriter.writeln(String.format(dashboardURLMSG, dashboardURL));
@@ -75,11 +77,19 @@ public abstract class AbstractAWI {
 		return driver;
 	}
 
-	public void waitForelementToBeClickable(WebDriver driver, String lastElementToLoad, int waitTime) {
+	public void waitForelementToBeClickable(WebDriver driver, String lastElementToLoad, int waitTime) throws AutomicException {
 		ExpectedCondition<Boolean> pageLoadCondition = waitDocumentReadyObj();
 		WebDriverWait wait = new WebDriverWait(driver, waitTime);
-		wait.until(pageLoadCondition);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(lastElementToLoad)));
+		try {
+			wait.until(pageLoadCondition);
+		} catch (TimeoutException e) {
+			throw new AutomicException(String.format(ExceptionConstants.LOGIN_PAGE_TIMEOUT, waitTime));
+		}
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(lastElementToLoad)));
+		} catch (TimeoutException e) {
+			throw new AutomicException(String.format(ExceptionConstants.PAGE_INPUTS_TIMEOUT, waitTime));
+		}
 	}
 
 	/**

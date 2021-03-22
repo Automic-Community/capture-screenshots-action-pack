@@ -6,22 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-import javax.imageio.ImageIO;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.automic.constants.Constants;
 import com.automic.exception.AutomicException;
-
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 /**
  * Common Utility class contains basic function(s) required by {@SSH} actions.

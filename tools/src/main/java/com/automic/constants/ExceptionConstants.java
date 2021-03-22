@@ -20,6 +20,8 @@ public class ExceptionConstants {
 
  // Certificate errors
     public static final String ERROR_SKIPPING_CERT = "Error skipping the certificate validation";
+    public static final String PAGE_TIMEOUT = "Timeout happened. Unable to get ready login page in provided timeframe [%s seconds].";
+    public static final String PAGE_INPUTS_TIMEOUT = "Timeout happened. Unable to load login page inputs in provided timeframe [%s seconds].";
     
     
     private ExceptionConstants() {
