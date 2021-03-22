@@ -7,7 +7,33 @@
 <OH_SubType/>
 </HEADER>
 <DOCU_Docu state="1" type="text">
-<DOC/>
+<DOC><![CDATA[About Automic's Analytics Screenshot Package
+================================
+
+This package contains actions that take a screenshot(s) of the AWI dashboard and widgets in the headless mode. It using JAVA with Selenium to take the screenshot that is included with the package. It also required chrome to be installed on the agent machine.
+
+
+=Supported versions=
+
+Automic web interface version:
+- 12.x.xx
+
+=Limitations=
+
+* No known limitation.
+
+=Setup=
+
+* Oracle JRE 1.7 or higher must be installed on Agent OS and "java" must be set as executable on the same.
+
+* The Agent should be able to access the AWI URL(s) in order to take the screenshot.
+
+=Actions=
+
+Following actions are supported for Azure.
+
+* Action Name: PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.ACTION.CAPTURE_DASHBOARD
+Action Description: This action Take a screenshot of the AWI dashboard and save it in the provided absolute path (Full Path).]]></DOC>
 </DOCU_Docu>
 </DOCU>
 </uc-export>

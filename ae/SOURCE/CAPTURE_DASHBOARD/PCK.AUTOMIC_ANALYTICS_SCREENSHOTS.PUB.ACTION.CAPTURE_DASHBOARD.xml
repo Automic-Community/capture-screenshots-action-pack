@@ -437,7 +437,38 @@
 <MSCRI/>
 </SCRIPT>
 <DOCU_Docu state="1" type="text">
-<DOC/>
+<DOC><![CDATA[= Action name =
+PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.ACTION.CAPTURE_DASHBOARD
+
+= General description =
+This action Take a screenshot of AWI dashboard and save it in the provided absolute path (Full Path). 
+
+= Inputs =
+- Dashboard Name*:  Specify public and private dashboard Name. E.g.DASH.OVERVIEW.JOBS
+- Absolute Path*:   The absolute file path of the agent machine to save dashboard screenshot. Only PNG file type supported. E.g.D:\screenshots\dashboard_snapshot.png
+
+= Behavior =
+- If any file already exists in the provided full path it will be overwritten.
+
+= Return Value =
+(none)
+
+
+= Outputs =
+* Return code is 0 in case of success.
+* Return code is non-zero in case of failure.
+
+= Rollback =
+(none)
+
+= Logging =
+AE logs will be displayed in the AE report.
+
+= Example =
+1. Take a screenshot of the dashboard on windows agent
+- Dashboard Name: DASH.OVERVIEW.JOBS
+- Absolute Path: D:\screenshots\dashboard_snapshot.png
+]]></DOC>
 </DOCU_Docu>
 </JOBP>
 </uc-export>
