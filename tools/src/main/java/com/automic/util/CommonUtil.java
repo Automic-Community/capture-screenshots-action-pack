@@ -184,7 +184,7 @@ public class CommonUtil {
 	 * @return true if file is of PNG type
 	 */
 	public static boolean checkPNG(File file) {
-		   String fileName = file.getName().toUpperCase();
+		   String fileName = file.getName();
 		   return fileName.endsWith(".PNG") || fileName.endsWith(".png");
 		}
 

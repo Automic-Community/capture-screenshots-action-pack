@@ -451,7 +451,7 @@ This action Take a screenshot of AWI dashboard and save it in the provided absol
 - If any file already exists in the provided full path it will be overwritten.
 
 = Return Value =
-(none)
+UC4RB_SNAP_FULL_PATH#   : Absolute file path of snapshot 
 
 
 = Outputs =
