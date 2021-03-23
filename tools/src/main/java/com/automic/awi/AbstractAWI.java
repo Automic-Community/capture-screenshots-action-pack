@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,6 +24,7 @@ import com.automic.constants.Constants;
 import com.automic.constants.ExceptionConstants;
 import com.automic.exception.AutomicException;
 import com.automic.modal.AWI;
+import com.automic.util.CommonUtil;
 import com.automic.util.ConsoleWriter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -45,7 +47,17 @@ public abstract class AbstractAWI {
 		String dashboardURL = formAWI12DashboardUrl(dashboard);
 		String dashboardURLMSG = "Dashboard URL[%s]";
 		ConsoleWriter.writeln(String.format(dashboardURLMSG, dashboardURL));
-		driver.get(dashboardURL);
+		try {
+			driver.get(dashboardURL);
+		} catch (WebDriverException e) {
+			String msg= e.getMessage();
+			if(CommonUtil.checkNotEmpty(msg) && msg.contains(ExceptionConstants.ERR_CONNECTION_TIMED_OUT)) {
+				throw new AutomicException(String.format(ExceptionConstants.URL_NOT_REACHNABLE, inputs.getAwiUrl()));
+			}else {
+				throw new AutomicException(e.getMessage());
+			}
+			
+		}
 		// wait for page until login button is clickable
 		waitForelementToBeClickable(driver, Constants.LOGIN, inputs.getTimeOut());
 		ConsoleWriter.writeln("Login page loaded ...");
