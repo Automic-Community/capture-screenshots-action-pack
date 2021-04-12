@@ -13,6 +13,7 @@ public class Constants {
 	public static final String AWI_DEPARTMENT = "d";
 	public static final String AWI_PASSWORD = "p";
 	public static final String TIMEOUT = "t";
+	public static final String DEBUG = "debug";
 	public static final String DASHBOARD = "ds";
 	public static final String FILE_PATH = "f";
 	public static final String YES = "YES";
@@ -21,12 +22,9 @@ public class Constants {
 	public static final String ZERO = "0";
 
 	// Input Fields Xpath Mapping
-	public static String CONNECTION = "//*[@id=\"awi-97011\"]/div/div[2]/div/div/div/div[1]/div/div[3]/div/div[3]/div/div/input";
-	public static String CLIENT = "//*[@id=\"awi-97011\"]/div/div[2]/div/div/div/div[1]/div/div[3]/div/div[5]/div/div/input";
-	public static String USERNAME = "//*[@id=\"awi-97011\"]/div/div[2]/div/div/div/div[1]/div/div[3]/div/div[7]/div/input";
-	public static String DEPARTMENT = "/html/body/div[1]/div/div[2]/div/div/div/div[1]/div/div[3]/div/div[9]/div/input";
-	public static String PASSWORD = "/html/body/div[1]/div/div[2]/div/div/div/div[1]/div/div[3]/div/div[11]/div/div/div/input";
-	public static String LOGIN = "//*[@id=\"awi-97011\"]/div/div[2]/div/div/div/div[1]/div/div[6]/div/div[5]/div/div/div/div";
+	public static String LOGIN_DATA_DIV = "div.uc4_framework_login_dataArea";
+	public static String LOGIN_DATA_DIV_INPUTS = "input";	
+	public static String LOGIN = "div.uc4_framework_login_loginButton.uc4_common_button-uc4_framework_login_loginButton";
 
 	private Constants() {
 	}

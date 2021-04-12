@@ -39,12 +39,12 @@ public abstract class AbstractAWI {
 
 	public AbstractAWI(AWI inputs) {
 		this.inputs = inputs;
-		initWebDriver(inputs.isIgnoreSSL());
+		initWebDriver(inputs.isIgnoreSSL(), inputs.isDebug());
 
 	}
 
 	public void loadDashboard(String dashboard) throws AutomicException {
-		String dashboardURL = formAWI12DashboardUrl(dashboard);
+		String dashboardURL = formAWIDashboardUrl(dashboard);
 		String dashboardURLMSG = "Dashboard URL[%s]";
 		ConsoleWriter.writeln(String.format(dashboardURLMSG, dashboardURL));
 		try {
@@ -68,7 +68,7 @@ public abstract class AbstractAWI {
 		takeSnapshot(driver, dashboard, filePath);
 	}
 
-	public void takeWidgetSnapshot(String widgetName, String folderPath) throws AutomicException {
+	protected void takeWidgetSnapshot(String widgetName, String folderPath) throws AutomicException {
 
 		List<WebElement> widgets = driver.findElements(By.className("v-gridlayout-slot"));
 
@@ -85,7 +85,7 @@ public abstract class AbstractAWI {
 	/**
 	 * @return the driver
 	 */
-	public WebDriver getDriver() {
+	public WebDriver getWebDriver() {
 		return driver;
 	}
 
@@ -98,23 +98,23 @@ public abstract class AbstractAWI {
 			throw new AutomicException(String.format(ExceptionConstants.LOGIN_PAGE_TIMEOUT, waitTime));
 		}
 		try {
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(lastElementToLoad)));
+			wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(lastElementToLoad)));
 		} catch (TimeoutException e) {
 			throw new AutomicException(String.format(ExceptionConstants.PAGE_INPUTS_TIMEOUT, waitTime));
 		}
 	}
 
 	/**
-	 * Check is Element is visible
+	 * Check if Element is visible
 	 * 
 	 * @param driver
 	 * @param lastElementToLoad
 	 */
-	public void waitForElemetLoad(WebDriver driver, String lastElementToLoad, int waitTime) {
+	protected void waitForElementLoad(WebDriver driver, String lastElementToLoad, int waitTime) {
 		ExpectedCondition<Boolean> pageLoadCondition = waitDocumentReadyObj();
 		WebDriverWait wait = new WebDriverWait(driver, waitTime);
 		wait.until(pageLoadCondition);
-		wait.until(ExpectedConditions.elementToBeClickable(By.className(lastElementToLoad)));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(lastElementToLoad)));
 	}
 
 	private static ExpectedCondition<Boolean> waitDocumentReadyObj() {
@@ -137,8 +137,18 @@ public abstract class AbstractAWI {
 		}
 
 	}
+	public void takeSnapshot(WebDriver driver, String fileWithPath) throws AutomicException {
+		Screenshot s = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		try {
+			ImageIO.write(s.getImage(), "PNG", new File(fileWithPath));
+		} catch (IOException e) {
 
-	private void initWebDriver(boolean ignoreSSL) {
+			throw new AutomicException(e.getMessage());
+		}
+
+	}
+
+	private void initWebDriver(boolean ignoreSSL, boolean debug) {
 		WebDriverManager.chromedriver().setup();
 
 		// Create instance of ChromeOptions Class
@@ -146,8 +156,11 @@ public abstract class AbstractAWI {
 		// Using the accept insecure cert method with true as parameter to accept the
 		// untrusted certificate
 		options.setAcceptInsecureCerts(ignoreSSL);
-
-		options.addArguments("--headless");
+		if (!debug) {
+			options.addArguments("--headless");
+		}else {
+			options.addArguments("start-maximized");
+		}
 
 		// Create an object of desired capabilities class with Chrome driver
 		DesiredCapabilities SSLCertificate = DesiredCapabilities.chrome();
@@ -158,11 +171,25 @@ public abstract class AbstractAWI {
 		options.merge(SSLCertificate);
 
 		driver = new ChromeDriver(options);
-		driver.manage().window().setSize(new org.openqa.selenium.Dimension(2560, 1600));
+		if(!debug) {
+			driver.manage().window().setSize(new org.openqa.selenium.Dimension(2560, 1600));
+		}
 	}
 
+	protected void setFieldValue(WebElement ele, String value, int spleepValue, boolean isclickToPerform) throws InterruptedException {
+		WebDriverWait webDriverWait=	new WebDriverWait(getWebDriver(), 3);
+		WebElement webEle = 	webDriverWait.until(ExpectedConditions.elementToBeClickable(ele));
+		if(isclickToPerform) {
+			webEle.click();
+			webEle.click();
+		}	
+		Thread.sleep(spleepValue);
+		ele.sendKeys(value);	
+		Thread.sleep(spleepValue);
+		
+	}
 	public abstract void loginAWI() throws AutomicException;
 
-	protected abstract String formAWI12DashboardUrl(String dashboard);
+	protected abstract String formAWIDashboardUrl(String dashboard);
 
 }

@@ -10,6 +10,7 @@ public class AWI {
 	private String password;
 	private Integer timeOut;
 	private boolean ignoreSSL;
+	private boolean debug;
 	
 
 	
@@ -120,6 +121,18 @@ public class AWI {
 	 */
 	public void setIgnoreSSL(boolean ignoreSSL) {
 		this.ignoreSSL = ignoreSSL;
+	}
+	/**
+	 * @return the debug
+	 */
+	public boolean isDebug() {
+		return debug;
+	}
+	/**
+	 * @param debug the debug to set
+	 */
+	public void setDebug(boolean debug) {
+		this.debug = debug;
 	}
 	
 	
