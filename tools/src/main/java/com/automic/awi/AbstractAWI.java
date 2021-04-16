@@ -39,7 +39,8 @@ public abstract class AbstractAWI {
 
 	public AbstractAWI(AWI inputs) {
 		this.inputs = inputs;
-		initWebDriver(inputs.isIgnoreSSL(), inputs.isDebug());
+		initWebDriver(inputs.isIgnoreSSL(), inputs.isDebug());		
+		ConsoleWriter.writeln(inputs);
 
 	}
 

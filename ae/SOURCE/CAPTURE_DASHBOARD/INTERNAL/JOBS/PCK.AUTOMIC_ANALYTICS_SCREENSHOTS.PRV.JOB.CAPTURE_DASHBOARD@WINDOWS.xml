@@ -27,10 +27,10 @@
 <ExtRepNone>0</ExtRepNone>
 <AutoDeactNo>0</AutoDeactNo>
 <AutoDeact1ErrorFree>0</AutoDeact1ErrorFree>
-<AutoDeactErrorFree>1</AutoDeactErrorFree>
-<DeactWhen>ANY_OK</DeactWhen>
+<AutoDeactErrorFree>0</AutoDeactErrorFree>
+<DeactWhen/>
 <DeactDelay>0</DeactDelay>
-<AutoDeactAlways>0</AutoDeactAlways>
+<AutoDeactAlways>1</AutoDeactAlways>
 <AttDialog>0</AttDialog>
 <ActAtRun>1</ActAtRun>
 <Consumption>0</Consumption>
@@ -48,16 +48,16 @@
 <BAT>1</BAT>
 <COM>0</COM>
 <WinBatch>0</WinBatch>
-<Standard>1</Standard>
+<Standard>0</Standard>
 <Minimized>0</Minimized>
-<Maximized>0</Maximized>
+<Maximized>1</Maximized>
 <JObjDefault>1</JObjDefault>
 <JObjYes>0</JObjYes>
 <JObjNo>0</JObjNo>
 <WorkingDirectory>c:\</WorkingDirectory>
 <Command/>
 <LogOn>0</LogOn>
-<ShowJob>0</ShowJob>
+<ShowJob>1</ShowJob>
 </ATTR_WINDOWS>
 <RUNTIME state="1">
 <MaxRetCode>0</MaxRetCode>
@@ -205,6 +205,8 @@
 : SET &UC4RB_ESCAPED_STRING# = &UC4RB_SNAP_FULL_PATH#
 : INC PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.INCLUDE.ESCAPE_ARG_VALUE@WIN
 : SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -f &UC4RB_ESCAPED_STRING#")
+
+: SET &UC4RB_JAVA_CMD# = STR_CAT(&UC4RB_JAVA_CMD#, " -debug &UC4RB_SNAP_HEADLESS#")
 
 ! publishing screenshot path
 :PUBLISH &UC4RB_SNAP_FULL_PATH#,,"TOP"

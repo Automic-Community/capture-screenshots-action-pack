@@ -28,6 +28,8 @@ Automic web interface version:
 
 * The Agent should be able to access the AWI URL(s) in order to take the screenshot.
 
+* Chrome must be installed
+
 =Actions=
 
 Following actions are supported for Azure.

@@ -134,6 +134,12 @@ public class AWI {
 	public void setDebug(boolean debug) {
 		this.debug = debug;
 	}
+	@Override
+	public String toString() {
+		return "AWI [aeVersion=" + aeVersion + ", awiUrl=" + awiUrl + ", aeConnection=" + aeConnection + ", client="
+				+ client + ", user=" + user + ", department=" + department + ", password=" + "************" + ", timeOut="
+				+ timeOut + ", ignoreSSL=" + ignoreSSL + ", debug=" + debug + "]";
+	}
 	
 	
 
