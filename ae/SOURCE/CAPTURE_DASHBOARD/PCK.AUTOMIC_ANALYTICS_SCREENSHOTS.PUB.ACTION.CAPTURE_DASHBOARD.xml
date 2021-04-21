@@ -60,7 +60,6 @@
 <UC4RB_SNAP_CLIENTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_CLIENT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS"/>
 <UC4RB_SNAP_CONNs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_CONN#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">AUTOMIC</UC4RB_SNAP_CONNs.00>
 <UC4RB_SNAP_DEPs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_DEP#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">AUTOMIC</UC4RB_SNAP_DEPs.00>
-<UC4RB_SNAP_HEADLESSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_HEADLESS#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">YES</UC4RB_SNAP_HEADLESSs.00>
 <UC4RB_SNAP_PAGE_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_PAGE_TIMEOUT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">30</UC4RB_SNAP_PAGE_TIMEOUTs.00>
 <UC4RB_SNAP_PASSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_PASS#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">--10DEC7A691DCEFF135</UC4RB_SNAP_PASSs.00>
 <UC4RB_SNAP_SSLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_SSL#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">YES</UC4RB_SNAP_SSLs.00>
@@ -74,6 +73,7 @@
 <UC4RB_SNAP_DASHBOARDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_DASHBOARD#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
 <UC4RB_SNAP_FILE_DIRs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_FILE_DIR#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
 <UC4RB_SNAP_FILE_NAMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_FILE_NAME#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
+<UC4RB_SNAP_WIDGET_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_WIDGET_TIMEOUT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD">5</UC4RB_SNAP_WIDGET_TIMEOUTs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -141,7 +141,6 @@
 <UC4RB_SNAP_CLIENTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_CLIENT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS"/>
 <UC4RB_SNAP_CONNs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_CONN#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">AUTOMIC</UC4RB_SNAP_CONNs.00>
 <UC4RB_SNAP_DEPs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_DEP#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">AUTOMIC</UC4RB_SNAP_DEPs.00>
-<UC4RB_SNAP_HEADLESSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_HEADLESS#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">YES</UC4RB_SNAP_HEADLESSs.00>
 <UC4RB_SNAP_PAGE_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_PAGE_TIMEOUT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">30</UC4RB_SNAP_PAGE_TIMEOUTs.00>
 <UC4RB_SNAP_PASSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_PASS#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">--10DEC7A691DCEFF135</UC4RB_SNAP_PASSs.00>
 <UC4RB_SNAP_SSLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_SSL#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">YES</UC4RB_SNAP_SSLs.00>
@@ -155,6 +154,7 @@
 <UC4RB_SNAP_DASHBOARDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_DASHBOARD#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
 <UC4RB_SNAP_FILE_DIRs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_FILE_DIR#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
 <UC4RB_SNAP_FILE_NAMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_FILE_NAME#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
+<UC4RB_SNAP_WIDGET_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_WIDGET_TIMEOUT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD">5</UC4RB_SNAP_WIDGET_TIMEOUTs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -222,7 +222,6 @@
 <UC4RB_SNAP_CLIENTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_CLIENT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS"/>
 <UC4RB_SNAP_CONNs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_CONN#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">AUTOMIC</UC4RB_SNAP_CONNs.00>
 <UC4RB_SNAP_DEPs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_DEP#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">AUTOMIC</UC4RB_SNAP_DEPs.00>
-<UC4RB_SNAP_HEADLESSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_HEADLESS#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">YES</UC4RB_SNAP_HEADLESSs.00>
 <UC4RB_SNAP_PAGE_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_PAGE_TIMEOUT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">30</UC4RB_SNAP_PAGE_TIMEOUTs.00>
 <UC4RB_SNAP_PASSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_PASS#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">--10DEC7A691DCEFF135</UC4RB_SNAP_PASSs.00>
 <UC4RB_SNAP_SSLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_SSL#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">YES</UC4RB_SNAP_SSLs.00>
@@ -236,6 +235,7 @@
 <UC4RB_SNAP_DASHBOARDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_DASHBOARD#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
 <UC4RB_SNAP_FILE_DIRs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_FILE_DIR#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
 <UC4RB_SNAP_FILE_NAMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_FILE_NAME#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
+<UC4RB_SNAP_WIDGET_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_WIDGET_TIMEOUT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD">5</UC4RB_SNAP_WIDGET_TIMEOUTs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -290,7 +290,6 @@
 <UC4RB_SNAP_CLIENTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_CLIENT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS"/>
 <UC4RB_SNAP_CONNs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_CONN#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">AUTOMIC</UC4RB_SNAP_CONNs.00>
 <UC4RB_SNAP_DEPs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_DEP#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">AUTOMIC</UC4RB_SNAP_DEPs.00>
-<UC4RB_SNAP_HEADLESSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_HEADLESS#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">YES</UC4RB_SNAP_HEADLESSs.00>
 <UC4RB_SNAP_PAGE_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_PAGE_TIMEOUT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">30</UC4RB_SNAP_PAGE_TIMEOUTs.00>
 <UC4RB_SNAP_PASSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_PASS#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">--10DEC7A691DCEFF135</UC4RB_SNAP_PASSs.00>
 <UC4RB_SNAP_SSLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_SSL#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PUB.PROMPTSET.CONNECTION_DETAILS">YES</UC4RB_SNAP_SSLs.00>
@@ -304,6 +303,7 @@
 <UC4RB_SNAP_DASHBOARDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_DASHBOARD#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
 <UC4RB_SNAP_FILE_DIRs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_FILE_DIR#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
 <UC4RB_SNAP_FILE_NAMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_FILE_NAME#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD"/>
+<UC4RB_SNAP_WIDGET_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_SNAP_WIDGET_TIMEOUT#" promptsetname="PCK.AUTOMIC_ANALYTICS_SCREENSHOTS.PRV.PROMPTSET.CAPTURE_DASHBOARD">5</UC4RB_SNAP_WIDGET_TIMEOUTs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -390,7 +390,6 @@
 <UC4RB_SNAP_PASSs.00 altview="0" haslist="0">--10DEC7A691DCEFF135</UC4RB_SNAP_PASSs.00>
 <UC4RB_SNAP_PAGE_TIMEOUTs.00 altview="0" haslist="0">30</UC4RB_SNAP_PAGE_TIMEOUTs.00>
 <UC4RB_SNAP_SSLs.00 altview="0" haslist="0">YES</UC4RB_SNAP_SSLs.00>
-<UC4RB_SNAP_HEADLESSs.00 altview="0" haslist="0">YES</UC4RB_SNAP_HEADLESSs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -400,6 +399,7 @@
 <UC4RB_SNAP_DASHBOARDs.00 altview="0" haslist="0"/>
 <UC4RB_SNAP_FILE_DIRs.00 altview="0" haslist="0"/>
 <UC4RB_SNAP_FILE_NAMEs.00 altview="0" haslist="0"/>
+<UC4RB_SNAP_WIDGET_TIMEOUTs.00 altview="0" haslist="0">5</UC4RB_SNAP_WIDGET_TIMEOUTs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -450,7 +450,8 @@ This action Take a screenshot of AWI dashboard and save it in the provided absol
 
 = Inputs =
 - Dashboard Name*:  Specify public and private dashboard Name. E.g.ÅDASH.OVERVIEW.JOBS
-- Absolute Path*:   The absolute file path of the agent machine to save dashboard screenshot. Only PNG file type supported. E.g.ÅD:\screenshots\dashboard_snapshot.png
+- Absolute Path*:   The absolute file path of the agent machine to save dashboard screenshot. Only PNG file type supported. E.g.D:\screenshots\dashboard_snapshot.png
+- Widget(s) Timeout (Second):   Provide dashboard widget(s) load timeout in second. Default timeout is 5 second.
 
 = Behavior =
 - If any file already exists in the provided full path it will be overwritten.

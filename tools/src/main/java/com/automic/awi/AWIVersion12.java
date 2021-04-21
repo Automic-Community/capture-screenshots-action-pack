@@ -57,9 +57,7 @@ public class AWIVersion12 extends AbstractAWI {
 				// submit login page
 				new WebDriverWait(getWebDriver(), 3).until(ExpectedConditions.elementToBeClickable(loginButtonDiv))
 						.click();
-				ConsoleWriter.writeln(String.format("Page is submitted..."));
-
-				Thread.sleep(5000);
+				ConsoleWriter.writeln(String.format("Page is submitted..."));				
 
 			} else {
 				if (inputElements != null) {
@@ -70,13 +68,10 @@ public class AWIVersion12 extends AbstractAWI {
 					throw new AutomicException("Unable to initialize Input Element object.");
 				}
 			}
-
 			waitForElementLoad(driver, "div.uc4_framework_header_homeButton", inputs.getTimeOut());
 
 			ConsoleWriter.writeln("Login sucessfully ...");
 
-			ConsoleWriter.writeln("Waiting for 5 second to dashboard widgets initialization ...");
-			Thread.sleep(5000);
 		} catch (InterruptedException | NoSuchElementException e) {
 			ConsoleWriter.writeln(e);
 			throw new AutomicException(e.getMessage());

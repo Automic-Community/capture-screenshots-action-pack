@@ -161,6 +161,8 @@ public abstract class AbstractAWI {
 			options.addArguments("--headless");
 		}else {
 			options.addArguments("start-maximized");
+			options.addArguments("enable-automation");
+			options.addArguments("--no-sandbox");
 		}
 
 		// Create an object of desired capabilities class with Chrome driver
@@ -188,6 +190,13 @@ public abstract class AbstractAWI {
 		ele.sendKeys(value);	
 		Thread.sleep(spleepValue);
 		
+	}
+	public void waitTime(int second) throws AutomicException {
+		try {
+			Thread.sleep(second * 1000);
+		} catch (InterruptedException e) {
+			throw new AutomicException(e.getMessage());
+		}		
 	}
 	public abstract void loginAWI() throws AutomicException;
 

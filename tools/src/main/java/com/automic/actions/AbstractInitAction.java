@@ -26,7 +26,7 @@ public abstract class AbstractInitAction extends AbstractAction {
 		addOption(Constants.AWI_USERNAME, true, "AWI Username");
 		addOption(Constants.AWI_DEPARTMENT, false, "AWI Department");
 		addOption(Constants.AWI_PASSWORD, true, "AWI Password");
-		addOption(Constants.TIMEOUT, true, "Page load time out");
+		addOption(Constants.TIMEOUT, true, "Page load time out");		
 		addOption(Constants.DEBUG, false, "Debug");
 
 	}
@@ -73,7 +73,7 @@ public abstract class AbstractInitAction extends AbstractAction {
 		awi.setUser(CommonUtil.trim(getOptionValue(Constants.AWI_USERNAME)));
 		awi.setDepartment(CommonUtil.trim(getOptionValue(Constants.AWI_DEPARTMENT)));
 		awi.setPassword(getOptionValue(Constants.AWI_PASSWORD));
-		awi.setTimeOut(Integer.valueOf(CommonUtil.trim(getOptionValue(Constants.TIMEOUT))));
+		awi.setTimeOut(Integer.valueOf(CommonUtil.trim(getOptionValue(Constants.TIMEOUT))));		
 		awi.setDebug(CommonUtil.convert2Bool(getOptionValue(Constants.DEBUG)));
 	}
 
