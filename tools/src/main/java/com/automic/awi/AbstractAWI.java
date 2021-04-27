@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -187,7 +188,7 @@ public abstract class AbstractAWI {
 			webEle.click();
 		}	
 		Thread.sleep(spleepValue);
-		ele.sendKeys(value);	
+		ele.sendKeys(Keys.BACK_SPACE.toString() + value);	
 		Thread.sleep(spleepValue);
 		
 	}
