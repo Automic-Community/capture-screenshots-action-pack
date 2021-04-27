@@ -1,8 +1,12 @@
 package com.automic.awi;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.automic.constants.Constants;
 import com.automic.exception.AutomicException;
@@ -10,76 +14,74 @@ import com.automic.modal.AWI;
 import com.automic.util.CommonUtil;
 import com.automic.util.ConsoleWriter;
 
-public class AWIVersion12 extends AbstractAWI{
-
+public class AWIVersion12 extends AbstractAWI {
 
 	public AWIVersion12(AWI inputs) {
 		super(inputs);
-	}	
+	}
 
 	public void loginAWI() throws AutomicException {
-		
+
 		try {
-			
-			// Connection
-			WebElement con = driver.findElement(By.xpath(Constants.CONNECTION));
-			con.sendKeys(inputs.getAeConnection());
-			con.click();
-			Thread.sleep(500);
-			
-			// Client
-			WebElement client = driver.findElement(By.xpath(Constants.CLIENT));
-			client.sendKeys(String.valueOf(inputs.getClient()));
-			client.click();
-			Thread.sleep(500);
 
-			// Username
-			WebElement username = driver.findElement(By.xpath(Constants.USERNAME));
-			username.sendKeys(inputs.getUser());
-			username.click();
-			Thread.sleep(500);
+			WebElement loginDataDiv = driver.findElement(By.cssSelector(Constants.LOGIN_DATA_DIV));
+			List<WebElement> inputElements = loginDataDiv.findElements(By.cssSelector(Constants.LOGIN_DATA_DIV_INPUTS));
 
-			// Department
-			if(CommonUtil.checkNotEmpty(inputs.getDepartment())) {
-				WebElement department = driver.findElement(By.xpath(Constants.DEPARTMENT));
-				department.sendKeys(inputs.getDepartment());
-				department.click();
-				Thread.sleep(500);
+			WebElement loginButtonDiv = driver.findElement(By.cssSelector(Constants.LOGIN));
+
+			if (inputElements != null && inputElements.size() == 5) {
+
+				// Connection
+				setFieldValue(inputElements.get(0), inputs.getAeConnection(), 1000, false);
+				ConsoleWriter.writeln(String.format("Connection field value is set[%s]", inputs.getAeConnection()));
+
+				// Client
+				setFieldValue(inputElements.get(1), String.valueOf(inputs.getClient()), 1000, true);
+				ConsoleWriter.writeln(String.format("Client field value is set[%s]", inputs.getClient()));
+
+				// Username
+				setFieldValue(inputElements.get(2), inputs.getUser(), 1000, true);
+				ConsoleWriter.writeln(String.format("Username field value is set[%s]", inputs.getUser()));
+
+				// Department
+				if (CommonUtil.checkNotEmpty(inputs.getDepartment())) {
+					setFieldValue(inputElements.get(3), inputs.getDepartment(), 1000, true);
+					ConsoleWriter.writeln(String.format("Department field value is set[%s]", inputs.getDepartment()));
+				}
+
+				// password
+				setFieldValue(inputElements.get(4), inputs.getPassword(), 1000, true);
+				ConsoleWriter.writeln(String.format("Password field value is set[%s]", "*********"));
+
+				Thread.sleep(1000);
+				// submit login page
+				new WebDriverWait(getWebDriver(), 3).until(ExpectedConditions.elementToBeClickable(loginButtonDiv))
+						.click();
+				ConsoleWriter.writeln(String.format("Page is submitted..."));				
+
+			} else {
+				if (inputElements != null) {
+					throw new AutomicException(String.format(
+							"ERROR: Unable to get input elements in required format. Retrived input elements[%s]",
+							inputElements.size()));
+				} else {
+					throw new AutomicException("Unable to initialize Input Element object.");
+				}
 			}
-			// password
-			WebElement password = driver.findElement(By.xpath(Constants.PASSWORD));
-			password.sendKeys(inputs.getPassword());
-			password.click();
-			Thread.sleep(100);
+			waitForElementLoad(driver, "div.uc4_framework_header_homeButton", inputs.getTimeOut());
 
-			// Login
-			driver.findElement(By.xpath(Constants.LOGIN)).click();
-			Thread.sleep(500);
-			
-			waitForElemetLoad(driver, "v-captiontext", inputs.getTimeOut());
 			ConsoleWriter.writeln("Login sucessfully ...");
-			Boolean isMyDashboardVisible = driver.findElement(By.className("v-captiontext")).isDisplayed();
-			if(isMyDashboardVisible) {
-				ConsoleWriter.writeln("DashBoard loaded successfully ...");
-			}else {
-				throw new AutomicException("ERROR: DashBoard loading failed ...");
-			}
-			
-			ConsoleWriter.writeln("Waiting for 5 second to dashboard fully initialization ...");
-			Thread.sleep(5000);
-		} catch (InterruptedException | NoSuchElementException e) {			
+
+		} catch (InterruptedException | NoSuchElementException e) {
+			ConsoleWriter.writeln(e);
 			throw new AutomicException(e.getMessage());
 		}
 	}
-	
-	
 
-
-	protected String formAWI12DashboardUrl(String dashboard) {
+	protected String formAWIDashboardUrl(String dashboard) {
 
 		return inputs.getAwiUrl() + "#" + inputs.getAeConnection() + "/0" + inputs.getClient() + "/@home/dashboards/"
 				+ dashboard;
 	}
 
-	
 }
