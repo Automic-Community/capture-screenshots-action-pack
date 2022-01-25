@@ -94,7 +94,9 @@
 						<manifest>
 							<mainClass>com.automic.client.Client</mainClass>
 						</manifest>
-
+						<manifestEntries>
+							<Multi-Release>true</Multi-Release>
+						</manifestEntries>
 						<manifestSections>
 							<manifestSection>
 								<name>analytics-tool</name>
