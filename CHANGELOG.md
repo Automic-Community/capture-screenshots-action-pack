@@ -1,35 +1,10 @@
-- previous distribution deleted
-- distribution file created newly
-- Merge pull request #1 from Automic-Community/log4j-upgrade
-- Update pom.xml
-- PCK_ANALYTICS-21:log4j upgrade
-- test.txt removed
-- Merge branch 'develop'
-- community release
-- Create test.txt
-- PMARA-17989:PMARA-18000 set minimum value of widget timeout
-- removing client field existing 0
-- Pull request #3: Feature/PMARA-17833 analytics actions screenshot dashboard widget
-- Debug input removed from promptset
-- Added Widget Timeout input
-- Updated code
-- Merge branch 'feature/PMARA-17833-analytics-actions-screenshot-dashboard-widget' of https://bitbucket.automic.com/stash/scm/packages/pck.automic_analytics_screenshots into feature/PMARA-17833-analytics-actions-screenshot-dashboard-widget
-- code optimize for fixes
-- review comments changes
-- promptset changes
-- promptset input chnages
-- PMARA-17875: Published screeshot path and Login page loding error
-- PMARA-17875: Documentation Update
-- Merge branch 'feature/PMARA-17833-analytics-actions-screenshot-dashboard-widget' of https://bitbucket.automic.com/stash/scm/packages/pck.automic_analytics_screenshots into feature/PMARA-17833-analytics-actions-screenshot-dashboard-widget
-- PMARA-17875: Fix link Object location
-- Pull request #2: Feature/PMARA-17833 analytics actions screenshot dashboard widget
-- link issue fixed
-- PMARA-17875: Review Comment incorporation java code change commit
-- PMARA-17875: Review Comment java code change commit
-- PMARA-17875: Review Comment java code change commit
-- PMARA-17875: Review Comment incorporated
-- PMARA-17875: Clean Initial Code of AE
-- PMARA-17875: JAVA Code commit
-- Remove unwanted file
-- capture dashboard initial
-- Initial code commit
+# Changelog
+All notable changes to this project will be documented in this file.
+
+## [1.0.1] - 2022-02-02
+### Changed
+- Upgraded the log4j version(2.17.1) to address security vulnerabilities.
+
+## [1.0.0] - 2021-05-17
+### Added
+- Action pack released for Automic-Community
